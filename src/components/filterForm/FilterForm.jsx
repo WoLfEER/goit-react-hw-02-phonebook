@@ -1,5 +1,6 @@
 import React from 'react';
 import { Label, Input } from 'components/filterForm/FilterForm.module';
+import PropTypes from 'prop-types';
 
 const FilterForm = ({ filteredValue, onSearch }) => {
   return (
@@ -13,3 +14,8 @@ const FilterForm = ({ filteredValue, onSearch }) => {
 };
 
 export default FilterForm;
+
+FilterForm.propTypes = {
+  filteredValue: PropTypes.string.isRequired,
+  onSearch: PropTypes.func.isRequired,
+};

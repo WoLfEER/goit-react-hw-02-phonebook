@@ -18,12 +18,12 @@ export default class App extends Component {
   };
 
   addUser = (name, number) => {
-    const nameNormalize = name.toLowerCase();
+    const nameNormalize = name.toLowerCase().trim();
     const ifExist = this.state.contacts.find(
       ({ name }) => nameNormalize === name
     );
     if (ifExist) {
-      return alert(`this ${name} already in your phone book`);
+      return alert(`${name} already in your phone book`);
     }
 
     const contact = {
@@ -65,7 +65,6 @@ export default class App extends Component {
   render() {
     const { filter } = this.state;
     const filteredContacts = this.getFilteredContacts();
-    console.log(filteredContacts);
     return (
       <Wrapper>
         <h2>Phone book</h2>
